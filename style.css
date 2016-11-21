@@ -3,26 +3,36 @@ body {
     margin: 60px auto;
     width: 70%;
     max-width: 950px;
+    background-image: url("shootingbattleship.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    text-align: center;
+.img {
+  width:50%;
+  height: 50%;
+
 }
 
-p, button, input {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
-	margin-bottom:1em;
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.directions {
+  font-size: 1.5em;
+  line-height: 1.4em;
+  text-align:center;
+  color: white;
+  margin-bottom:1em;
+  border:9px solid black;
+}
 #gameboard {
-	position:relative;
+	position: fixed;
 	margin:0 auto 2em auto;
 	width:500px;
 	height:500px;
+  margin-left: 290px;
 }
 
 #gameboard div {
