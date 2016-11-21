@@ -5,8 +5,12 @@ var squareSize = 50;
 
 var gameBoardContainer = document.getElementById("gameboard");
 
+function myFunction() {
+    document.getElementById("gameboard").reset();
+}
+function buildBoard() {
 
-for (i = 0; i < cols; i++) {
+  for (i = 0; i < cols; i++) {
     for (j = 0; j < rows; j++) {
 
         var square = document.createElement("div");
@@ -20,8 +24,12 @@ for (i = 0; i < cols; i++) {
 
         square.style.top = topPosition + 'px';
         square.style.left = leftPosition + 'px';
-    }
-}
+    };
+  };
+};
+
+buildBoard();
+
 var hitCount = 0;
 
 var gameBoards = [ [
@@ -65,9 +73,10 @@ var gameBoards = [ [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 1, 1, 1],
   ]
-  ]
+]
 
-var gameBoard = gameBoards[0];
+var currentBoard = 0;
+var gameBoard = gameBoards[currentBoard];
 
 gameBoardContainer.addEventListener("click", fireTorpedo, false);
 
@@ -94,6 +103,11 @@ function fireTorpedo(e) {
 
             if (hitCount == 12) {
                 alert("You win!");
+                currentBoard++;
+                console.log(currentBoard);
+                gameBoard = gameBoards[currentBoard];
+                console.log(gameBoard);
+                buildBoard();
             }
 
         } else if (gameBoard[row][col] > 1) {
