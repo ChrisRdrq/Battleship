@@ -96,16 +96,23 @@ function fireTorpedo(e) {
         if (gameBoard[row][col] == 0) {
             e.target.style.background = '#429bf4';
             splash.play();
+            gameBoard[row][col] = 3;
             missCount++
             $("#miss").text(missCount);
         if (missCount/12 === s) {
             alert("You Lose!");
             currentBoard++;
-            t++;
-            s++;
+            hitCount = 0;
+            missCount = 0;
+            console.log(currentBoard);
+            gameBoard = gameBoards[currentBoard];
+            console.log(gameBoard);
+            buildBoard();
+            $("#miss").text(missCount);
+            $(".player h2").text(hitCount);
           }
 
-            gameBoard[row][col] = 3;
+
             //hit is red
         } else if (gameBoard[row][col] == 1) {
             e.target.style.background = 'red';
@@ -116,12 +123,14 @@ function fireTorpedo(e) {
             if (hitCount/12 === t) {
                 alert("You win!");
                 currentBoard++;
-                t++;
-                s++;
+                hitCount = 0;
+                missCount =0;
                 console.log(currentBoard);
                 gameBoard = gameBoards[currentBoard];
                 console.log(gameBoard);
                 buildBoard();
+                $(".player h2").text(hitCount);
+                $("#miss").text(missCount);
             }
 
         } else if (gameBoard[row][col] > 1) {
