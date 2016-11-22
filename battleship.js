@@ -1,6 +1,7 @@
 var rows = 7;
 var cols = 7;
 var squareSize = 50;
+var t = 1;
 
 
 var gameBoardContainer = document.getElementById("gameboard");
@@ -45,7 +46,7 @@ var gameBoards = [ [
     [0, 0, 0, 0, 0, 1, 0],
     [0, 0, 0, 0, 0, 1, 0],
     [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 1, 1, 0],
+    [1, 0, 0, 1, 1, 1, 0],
     [1, 0, 0, 0, 0, 0, 0],
     [1, 0, 0, 0, 0, 0, 0],
 ],[
@@ -102,9 +103,10 @@ function fireTorpedo(e) {
             hit.play();
             hitCount++;
             $(".player h2").text(hitCount);
-            if (hitCount == 12) {
+            if (hitCount/12 === t) {
                 alert("You win!");
                 currentBoard++;
+                t++;
                 console.log(currentBoard);
                 gameBoard = gameBoards[currentBoard];
                 console.log(gameBoard);

@@ -16,11 +16,14 @@ body {
 .score-board {
     text-align: center;
     padding: 25px;
+    display: flex;
+    align-items: left;
 }
 
 .player {
     display: inline-block;
     padding: 15px;
+    color: #8e8e8e;
 }
 
 .player h2 {
@@ -28,9 +31,9 @@ body {
 }
 
 .score-box {
-    border: 3px solid black;
+    border: 7px solid black;
     padding: 30px;
-    color: #2CB3C9;
+    color: #8e8e8e;
 }
 
 .logo{
@@ -51,7 +54,7 @@ body {
 	margin:0 auto 2em auto;
 	width:500px;
 	height:500px;
-  margin-left: 290px;
+  margin-left: 270px;
 }
 
 #gameboard div {
