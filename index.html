@@ -8,6 +8,11 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
 
 		<title>Battleship</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -17,10 +22,18 @@
 	<div class="logo">
 <img class="img" src="battleshiplogo.png"/>
 </div>
-	<p class= "directions">Click the board to fire at a ships. Only 12 clicks on ships to win the game.</p>
+	<p class= "directions">Click the board to fire at a ship. Only 12 hits to win the game.</p>
 
 	<div id="gameboard" class="col-Lg-12">
 	</div>
+	<div class="score-board">
+			<div class="player">
+					<h1>Hits</h1>
+					<div class="score-box">
+						<h2> 0 </h2>
+					</div>
+			</div>
+		 </div>
 	<audio autoplay>
 	  <source src="Manyour.wav" type="audio/mpeg">
 	</audio>

@@ -101,7 +101,7 @@ function fireTorpedo(e) {
             gameBoard[row][col] = 2;
             hit.play();
             hitCount++;
-
+            $(".player h2").text(hitCount);
             if (hitCount == 12) {
                 alert("You win!");
                 currentBoard++;
