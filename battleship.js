@@ -2,7 +2,8 @@ var rows = 7;
 var cols = 7;
 var squareSize = 50;
 var t = 1;
-
+var s = 1;
+var missCount = 0
 
 var gameBoardContainer = document.getElementById("gameboard");
 
@@ -95,6 +96,15 @@ function fireTorpedo(e) {
         if (gameBoard[row][col] == 0) {
             e.target.style.background = '#429bf4';
             splash.play();
+            missCount++
+            $("#miss").text(missCount);
+        if (missCount/12 === s) {
+            alert("You Lose!");
+            currentBoard++;
+            t++;
+            s++;
+          }
+
             gameBoard[row][col] = 3;
             //hit is red
         } else if (gameBoard[row][col] == 1) {
@@ -107,6 +117,7 @@ function fireTorpedo(e) {
                 alert("You win!");
                 currentBoard++;
                 t++;
+                s++;
                 console.log(currentBoard);
                 gameBoard = gameBoards[currentBoard];
                 console.log(gameBoard);
